@@ -28,7 +28,7 @@ import java.io.IOException;
  *
  */
 
-public class demo01Throws {
+public class Demo01Throws {
 
     public static void main(String[] args) throws IOException {
         readFile("~/Desktop/1.txtt");
