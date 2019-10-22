@@ -27,10 +27,14 @@ public class Demo03FileGet {
         long l2 = f2.length();
         System.out.println(l2);
 
-        File f3 = new File("/src/com/carrsk/Demo05File/demo01File/README.md");
+        // 相对路径
+        File f3 = new File("src/com/carrysk/Demo05File/demo01File/Demo03FileGet.java");
+        File f33 = new File("./src/com/carrysk/Demo05File/demo01File/Demo03FileGet.java");
+
         long l3 = f3.length();
         System.out.println(l3);
         System.out.println(f3.getAbsolutePath());
+        System.out.println(f3.getName());
 
     }
 
