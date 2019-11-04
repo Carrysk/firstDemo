@@ -1,6 +1,7 @@
 package com.carrysk.Demo07Net.Demo01Tcp;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
@@ -50,8 +51,14 @@ public class TCPClient {
         ops.write("你好啊".getBytes());
 
         // 4 getInputStream
+        InputStream fis = socket.getInputStream();
 
+        byte[] b = new byte[1024];
+        int len = -1;
         // 5 read
+        while(-1 != (len = fis.read(b))) {
+            System.out.println(new String(b, 0, len));
+        }
 
         // 6 close
         socket.close();
