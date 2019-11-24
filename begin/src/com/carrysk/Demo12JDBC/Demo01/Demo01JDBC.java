@@ -33,7 +33,13 @@ import java.sql.Statement;
  *      2 int executeUpdate(String sql) 执行DML(insert update delete) 语句, DDL(create, alter, drop)语句
  *        ** 返回 影响的行数 可以通过这个影响的行数判断DML语句是否执行成功， 返回值>0则执行成功， 反之，则失效
  *      3 ResultSet executeQuery(String sql) 执行DQL(select)语句
- *
+ * 4ResultSet 结果集对象，封装查询结果
+ *   * boolean next() 游标向下移动一行 是否到达最后一行
+ *   * getXxx(参数) 获取数据
+ *       ** Xxx 代表数据类型 int Double Float String...
+ *       参数
+ *          int 代表列的编号 从1开始
+ *          String 代表列名称
  *
  */
 public class Demo01JDBC {
