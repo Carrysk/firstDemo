@@ -40,7 +40,27 @@ import java.sql.Statement;
  *       参数
  *          int 代表列的编号 从1开始
  *          String 代表列名称
- *
+ * 5PrepareStatement 执行sql对象
+ *   1 sql注入问题 在拼接字符串时可能发生sql注入
+ *   2 解决sql注入问题 使用PrepareStatement对象来解决
+ *   3 PrepareStatement 继承自Statement
+ *   4 预编译sql 参数使用？做占位符
+ *   5步骤
+ *      1 导入jar
+ *      2 注册驱动
+ *      3 获取数据库连接对象
+ *      4 定义sql
+ *         使用 ？做参数的占位符
+ *      5 获取PrepareStatement对象 Connection.prepareStatement(sql)
+ *      6 ？ 赋值
+ *        ** setXxx(参数1， 参数2）
+ *           Xxx 数据类型
+ *           参数1 ? 第n个？ 从 1 开始
+ *           参数2 ？的value
+ *      7 执行sql
+ *      8 处理结果
+ *      9 释放资源
+ *   **** 执行sql 需要使用prepareStatement预编译对象 防止sql注入
  */
 public class Demo01JDBC {
     public static void main(String[] args) throws Exception {
